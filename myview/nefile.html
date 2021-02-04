@@ -1,0 +1,167 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Node Project Without Frameworks</title>
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10 ">
+                    <div class="mydivnav">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand text-danger" href="#">Quiz App</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">About Page</a>
+                                        </li>
+
+                                    </ul>
+                                    <ul class="navbar-nav d-flex  mb-2 mb-lg-0">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link text-danger" href="#">Logout</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-weight-normal text-success">Welcome <span id="myuser">Brian Sagalla</span> To An
+                            Online Tech
+                            quiz </h5>
+                        <br>
+
+                        <h4 class="font-weight-normal text-primary">Question 1</h4>
+                        <p class="text-secondary">Click on The Correct Answer (Once You Click You cannot redo) </p>
+                        <h5 class="font-weight-normal text-secondary" id="domques">Which company was established on
+                            April 1st, 1976
+                            by Steve Jobs, Steve Wozniak and Ronald Wayne?</h5>
+                        <div class="mylists">
+                            <ul class="list-group text-secodary" id="domchoices">
+                                <li class="list-group-item" id="0m">Apple</li>
+                                <li class="list-group-item" id="1m">Atari</li>
+                                <li class="list-group-item" id="2m">Commodore</li>
+                                <li class="list-group-item" id="3m">Microsoft</li>
+                            </ul>
+                        </div>
+                        <div class="py-3">
+                            <button class="btn btn-primary">Next Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+        const game_url = 'http://127.0.0.1:3000/gamepoint';
+        const user_url = 'http://127.0.0.1:3000/checkiflogin';
+        fetch(user_url)
+            .then((data_retr) => {
+                return data_retr.json();
+
+            })
+            .then((pro_data) => {
+                console.log('Resolved');
+
+                if (pro_data.length === 0) {
+                    window.location.replace("http://127.0.0.1:3000/login");
+                }
+
+                let username = pro_data[0];
+                let usermail = pro_data[1];
+
+                document.getElementById('myuser').innerHTML = username;
+
+            })
+            .catch((errors) => {
+                console.log('Rejected');
+                console.log(errors);
+            })
+
+
+
+        // Game apis
+        fetch(game_url)
+            .then((data_retr) => {
+                return data_retr.json();
+
+            })
+            .then((pro_data) => {
+                console.log('Resolved');
+                myfunctio(pro_data);
+
+
+            })
+            .catch((errors) => {
+                console.log('Rejected');
+                console.log(errors);
+            })
+
+        function myfunctio(dataparam) {
+            let processdata = [];
+            for (let y = 0; y < dataparam.length; y++) {
+                const element = dataparam[y];
+                let newarr = element.incorrect_answers
+                newarr.push(element.correct_answer);
+                newarr.sort();
+                element.incorrect_answers = newarr;
+                processdata.push(element);
+            }
+
+            myfunctio2(processdata);
+
+        }
+
+        function myfunctio2(datasparams) {
+            let currentIndex = 0;
+            let myobject = datasparams[currentIndex];
+            console.log(myobject);
+            let myquestions = myobject.question;
+            let mymuchoices = myobject.incorrect_answers;
+            let mycorectans = myobject.correct_answer;
+
+            let choicedata = "";
+
+            // for (const arrelem of mymuchoices) {
+            //     choicedata += `<li class="list-group-item" id="">${arrelem}</li>`;  
+            // }
+            for (let y = 0; y < mymuchoices.length; y++) {
+                let arrelem = mymuchoices[y];
+                choicedata += `<li class="list-group-item" id="${y}m">${arrelem}</li>`;
+            }
+
+            document.getElementById('domques').innerHTML = myquestions;
+            document.getElementById('domchoices').innerHTML = choicedata;
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

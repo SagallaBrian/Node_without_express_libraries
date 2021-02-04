@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Node Project Without Frameworks</title>
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="py-5">
+                        <div class="myform">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="font-weight-normal text-success">Sign Up Now</h4>
+                                </div>
+                                <div class="col-md-6 text-md-right">
+                                    <a href="/" class="btn btn-secondary">Go Back To Home PAge</a>
+                                </div>
+                            </div>
+                            <form method="POST" action="/signupform">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">User Name</label>
+                                    <input type="text" class="form-control" name="impusernam" id="username"
+                                        placeholder="Enter User Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="usemal" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="usemal" aria-describedby="emailHelp"
+                                        name="impemail" placeholder="Enter Email Address">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mypass" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="mypass" name="impass"
+                                        placeholder="Enter Password">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+
+</body>
+
+</html>

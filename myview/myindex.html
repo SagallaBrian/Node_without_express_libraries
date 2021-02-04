@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Node Project Without Frameworks</title>
+</head>
+
+<body>
+    <div class="container-lg">
+        <div class="py-5">
+            <div class="row justify-content-center">
+
+                <div class="col-md-10 ">
+                    <div class="mydivnav">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand text-danger" href="#">Quiz App</a>
+
+                                <div class="collapse navbar-collapse" id="nod">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Reset Test</a>
+                                        </li>
+
+                                    </ul>
+                                    <ul class="navbar-nav d-flex  mb-2 mb-lg-0">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link text-danger" href="logout">Logout</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-weight-normal text-success">Welcome <span id="myuser"></span> To An Online Tech
+                            quiz (20 Questions) </h5>
+                        <br>
+
+
+                        <div id="compldiv">
+                            <h4 class="font-weight-normal text-primary">Question <span id="myque">1</span></h4>
+                            <p class="text-secondary">Click on The Correct Answer (Once You Click You cannot redo) </p>
+                            <h5 class="font-weight-normal text-secondary" id="domques">Loading ...</h5>
+                            <div class="mylists">
+                                <div class="list-group text-secodary" id="domchoices">
+                                    Loading ...
+                                </div>
+                            </div>
+                            <div class="py-3">
+                                <button class="btn btn-primary" id="myloopbtn" disabled>Next Question</button>
+                            </div>
+
+                            <div class="py-3">
+                                <h5 class="font-weight-normal text-success">
+                                    Currentscore = <span id="cuscore">0</span>/ <span id="numofques">1</span>
+                                </h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+        const game_url = 'http://127.0.0.1:3000/gamepoint';
+        const user_url = 'http://127.0.0.1:3000/checkiflogin';
+
+        function checkloginfu(params) {
+            fetch(user_url)
+                .then((data_retr) => {
+                    return data_retr.json();
+
+                })
+                .then((pro_data) => {
+                    if (pro_data.length === 0) {
+                        window.location.replace("http://127.0.0.1:3000/login");
+                    }
+                })
+                .catch((errors) => {
+                    console.log('Rejected');
+                    console.log(errors);
+                })
+
+        }
+        // Uncomment the followng code if you want to check if the user is logged in 
+        // setInterval(checkloginfu, 1000); 
+        fetch(user_url)
+            .then((data_retr) => {
+                return data_retr.json();
+
+            })
+            .then((pro_data) => {
+                console.log('Resolved');
+
+                if (pro_data.length === 0) {
+                    window.location.replace("http://127.0.0.1:3000/login");
+                }
+
+                let username = pro_data[0];
+                let usermail = pro_data[1];
+
+                document.getElementById('myuser').innerHTML = username;
+
+            })
+            .catch((errors) => {
+                console.log('Rejected');
+                console.log(errors);
+            })
+
+
+
+        // Game apis
+        fetch(game_url)
+            .then((data_retr) => {
+                return data_retr.json();
+
+            })
+            .then((pro_data) => {
+                console.log('Resolved');
+                myfunctio(pro_data);
+
+
+            })
+            .catch((errors) => {
+                console.log('Rejected');
+                console.log(errors);
+            })
+
+        function myfunctio(dataparam) {
+            let processdata = [];
+            for (let y = 0; y < dataparam.length; y++) {
+                const element = dataparam[y];
+                let newarr = element.incorrect_answers
+                newarr.push(element.correct_answer);
+                newarr.sort();
+                element.incorrect_answers = newarr;
+                processdata.push(element);
+            }
+
+            console.log(dataparam.length) ;
+            for (let y = 0; y < processdata.length; y++) {
+                let randin1 = Math.floor(Math.random()* processdata.length);                
+                let randin2 = Math.floor(Math.random()* processdata.length);   
+                let valatind1 = processdata[randin1];             
+                let valatind2 = processdata[randin2];    
+                processdata[randin1] = valatind2 ;
+                processdata[randin2] = valatind1 ;
+            }
+
+            myfunctio2(processdata);
+
+        }
+
+        function myfunctio2(datasparams) {
+
+            let currentIndex = 0;
+            let lastindex = 20;
+            let quesnum = 1;
+            let corecstats = 0;
+            document.getElementById("myloopbtn").addEventListener("click", () => {
+
+                document.getElementById("myloopbtn").disabled = true;
+                currentIndex += 1;
+                quesnum += 1;
+                let percen = (corecstats / currentIndex ) * 100 ;
+                if (currentIndex === lastindex) {
+                    let finishdata = `<div id="findiv">
+                                <h4 class="font-weight-normal text-primary">Thank you For Taking the Test</h4>
+                                <h3 class="font-weight-normal text-danger">
+                                    Your Total Score = <span id="cuscore">${corecstats}</span>/ 20 <br/>
+                                    Percentage: ${percen}%
+                                </h3>
+                                <a href="" class="btn btn-primary">Take A Retake</a>
+                            </div>`;
+                    document.getElementById("compldiv").innerHTML = finishdata ;
+                }
+                else {
+                    displayfuncion(currentIndex);
+                }
+                document.getElementById("myque").innerText = quesnum
+                document.getElementById("numofques").innerText = quesnum
+
+
+            });
+
+
+
+
+            function displayfuncion(indparam) {
+                let myobject = datasparams[indparam];
+                let myquestions = myobject.question;
+                let mymuchoices = myobject.incorrect_answers;
+                let mycorectans = myobject.correct_answer;
+                let choicedata = "";
+                for (let y = 0; y < mymuchoices.length; y++) {
+                    let arrelem = mymuchoices[y];
+                    choicedata += `<button class="list-group-item" style='text-align: left' id="a${y}m">${arrelem}</button>`;
+                }
+                document.getElementById('domques').innerHTML = myquestions;
+                document.getElementById('domchoices').innerHTML = choicedata;
+
+
+
+                document.getElementById("a0m").addEventListener("click", () => {
+                    document.getElementById("myloopbtn").disabled = false;
+                    let myselectelem = document.getElementById("a0m");
+                    myselectelem.setAttribute("disabled", true);
+
+                    let otherlems1 = document.getElementById("a1m");
+                    let otherlems1val = otherlems1.innerText;
+                    otherlems1.setAttribute("disabled", true);
+                    if (otherlems1val === mycorectans) {
+                        otherlems1.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems2 = document.getElementById("a2m");
+                    otherlems2.setAttribute("disabled", true)
+                    let otherlems2val = otherlems2.innerText;
+                    if (otherlems2val === mycorectans) {
+                        otherlems2.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems3 = document.getElementById("a3m");
+                    otherlems3.setAttribute("disabled", true)
+                    let otherlems3val = otherlems3.innerText;
+                    if (otherlems3val === mycorectans) {
+                        otherlems3.classList.add("bg-success", "text-white");
+                    }
+                    let valuevar = myselectelem.innerHTML;
+                    if (valuevar === mycorectans) {
+                        myselectelem.classList.add("bg-success", "text-white");
+                        corecstats += 1;
+                        document.getElementById('cuscore').innerHTML = corecstats;
+                    }
+                    else {
+                        myselectelem.classList.add("bg-danger", "text-white")
+                    }
+                });
+                document.getElementById("a1m").addEventListener("click", () => {
+                    document.getElementById("myloopbtn").disabled = false;
+                    let myselectelem = document.getElementById("a1m");
+                    myselectelem.setAttribute("disabled", true);
+
+                    let otherlems1 = document.getElementById("a0m");
+                    otherlems1.setAttribute("disabled", true)
+                    let otherlems1val = otherlems1.innerText;
+                    if (otherlems1val === mycorectans) {
+                        otherlems1.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems2 = document.getElementById("a2m");
+                    otherlems2.setAttribute("disabled", true)
+                    let otherlems2val = otherlems2.innerText;
+                    if (otherlems2val === mycorectans) {
+                        otherlems2.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems3 = document.getElementById("a3m");
+                    otherlems3.setAttribute("disabled", true)
+                    let otherlems3val = otherlems3.innerText;
+                    if (otherlems3val === mycorectans) {
+                        otherlems3.classList.add("bg-success", "text-white");
+                    }
+                    let valuevar = myselectelem.innerHTML;
+                    if (valuevar === mycorectans) {
+                        myselectelem.classList.add("bg-success", "text-white");
+                        corecstats += 1;
+                        document.getElementById('cuscore').innerHTML = corecstats;
+                    }
+                    else {
+                        myselectelem.classList.add("bg-danger", "text-white")
+                    }
+                });
+                document.getElementById("a2m").addEventListener("click", () => {
+                    document.getElementById("myloopbtn").disabled = false;
+                    let myselectelem = document.getElementById("a2m");
+                    myselectelem.setAttribute("disabled", true);
+
+                    let otherlems1 = document.getElementById("a1m");
+                    otherlems1.setAttribute("disabled", true)
+                    let otherlems1val = otherlems1.innerText;
+                    if (otherlems1val === mycorectans) {
+                        otherlems1.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems2 = document.getElementById("a0m");
+                    otherlems2.setAttribute("disabled", true);
+                    let otherlems2val = otherlems2.innerText;
+                    if (otherlems2val === mycorectans) {
+                        otherlems2.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems3 = document.getElementById("a3m");
+                    otherlems3.setAttribute("disabled", true);
+                    let otherlems3val = otherlems3.innerText;
+                    if (otherlems3val === mycorectans) {
+                        otherlems3.classList.add("bg-success", "text-white");
+                    }
+                    let valuevar = myselectelem.innerHTML;
+                    if (valuevar === mycorectans) {
+                        myselectelem.classList.add("bg-success", "text-white");
+                        corecstats += 1;
+                        document.getElementById('cuscore').innerHTML = corecstats;
+                    }
+                    else {
+                        myselectelem.classList.add("bg-danger", "text-white")
+                    }
+                });
+                document.getElementById("a3m").addEventListener("click", () => {
+                    let myselectelem = document.getElementById("a3m");
+                    document.getElementById("myloopbtn").disabled = false;
+
+                    let otherlems1 = document.getElementById("a1m");
+                    otherlems1.setAttribute("disabled", true);
+                    otherlems1.disabled = true;
+                    let otherlems1val = otherlems1.innerText;
+                    if (otherlems1val === mycorectans) {
+                        otherlems1.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems2 = document.getElementById("a2m");
+                    otherlems2.setAttribute("disabled", true)
+                    let otherlems2val = otherlems2.innerText;
+                    if (otherlems2val === mycorectans) {
+                        otherlems2.classList.add("bg-success", "text-white");
+                    }
+
+                    let otherlems3 = document.getElementById("a0m");
+                    otherlems3.setAttribute("disabled", true);
+                    let otherlems3val = otherlems3.innerText;
+                    if (otherlems3val === mycorectans) {
+                        otherlems3.classList.add("bg-success", "text-white");
+                    }
+                    let valuevar = myselectelem.innerHTML;
+                    myselectelem.setAttribute("disabled", true);
+                    if (valuevar === mycorectans) {
+                        myselectelem.classList.add("bg-success", "text-white");
+                        corecstats += 1;
+                        document.getElementById('cuscore').innerHTML = corecstats;
+                    }
+                    else {
+                        myselectelem.classList.add("bg-danger", "text-white")
+                    }
+                });
+            }
+
+            displayfuncion(currentIndex);
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

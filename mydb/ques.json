@@ -1,0 +1,578 @@
+[
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?",
+        "correct_answer": "Apple",
+        "incorrect_answers": [
+            "Microsoft",
+            "Atari",
+            "Commodore"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which internet company began life as an online bookstore called &#039;Cadabra&#039;?",
+        "correct_answer": "Amazon",
+        "incorrect_answers": [
+            "eBay",
+            "Overstock",
+            "Shopify"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Whistler was the codename of this Microsoft Operating System.",
+        "correct_answer": "Windows XP",
+        "incorrect_answers": [
+            "Windows 2000",
+            "Windows 7",
+            "Windows 95"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What does AD stand for in relation to Windows Operating Systems? ",
+        "correct_answer": "Active Directory",
+        "incorrect_answers": [
+            "Alternative Drive",
+            "Automated Database",
+            "Active Department"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "When was the programming language &quot;C#&quot; released?",
+        "correct_answer": "2000",
+        "incorrect_answers": [
+            "1998",
+            "1999",
+            "2001"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "HTML is what type of language?",
+        "correct_answer": "Markup Language",
+        "incorrect_answers": [
+            "Macro Language",
+            "Programming Language",
+            "Scripting Language"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "What amount of bits commonly equals one byte?",
+        "correct_answer": "8",
+        "incorrect_answers": [
+            "1",
+            "2",
+            "64"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "How many Hz does the video standard PAL support?",
+        "correct_answer": "50",
+        "incorrect_answers": [
+            "59",
+            "60",
+            "25"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which computer hardware device provides an interface for all other connected devices to communicate?",
+        "correct_answer": "Motherboard",
+        "incorrect_answers": [
+            "Central Processing Unit",
+            "Hard Disk Drive",
+            "Random Access Memory"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "On which computer hardware device is the BIOS chip located?",
+        "correct_answer": "Motherboard",
+        "incorrect_answers": [
+            "Hard Disk Drive",
+            "Central Processing Unit",
+            "Graphics Processing Unit"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "The computer OEM manufacturer Clevo, known for its Sager notebook line, is based in which country?",
+        "correct_answer": "Taiwan",
+        "incorrect_answers": [
+            "United States",
+            "Germany",
+            "China (People&#039;s Republic of)"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Nvidia&#039;s headquarters are based in which Silicon Valley city?",
+        "correct_answer": "Santa Clara",
+        "incorrect_answers": [
+            "Palo Alto",
+            "Cupertino",
+            "Mountain View"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What was the name given to Android 4.3?",
+        "correct_answer": "Jelly Bean",
+        "incorrect_answers": [
+            "Lollipop",
+            "Nutella",
+            "Froyo"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In web design, what does CSS stand for?",
+        "correct_answer": "Cascading Style Sheet",
+        "incorrect_answers": [
+            "Counter Strike: Source",
+            "Corrective Style Sheet",
+            "Computer Style Sheet"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "The internet domain .fm is the country-code top-level domain for which Pacific Ocean island nation?",
+        "correct_answer": "Micronesia",
+        "incorrect_answers": [
+            "Fiji",
+            "Tuvalu",
+            "Marshall Islands"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "While Apple was formed in California, in which western state was Microsoft founded?",
+        "correct_answer": "New Mexico",
+        "incorrect_answers": [
+            "Washington",
+            "Colorado",
+            "Arizona"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which one of these is not an official development name for a Ubuntu release?",
+        "correct_answer": "Mystic Mansion",
+        "incorrect_answers": [
+            "Trusty Tahr",
+            "Utopic Unicorn",
+            "Wily Werewolf"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the name of the default theme that is installed with Windows XP?",
+        "correct_answer": "Luna",
+        "incorrect_answers": [
+            "Neptune",
+            "Whistler",
+            "Bliss"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Which of these was the name of a bug found in April 2014 in the publicly available OpenSSL cryptography library?",
+        "correct_answer": "Heartbleed",
+        "incorrect_answers": [
+            "Shellshock",
+            "Corrupted Blood",
+            "Shellscript"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the correct term for the metal object in between the CPU and the CPU fan within a computer system?",
+        "correct_answer": "Heat Sink",
+        "incorrect_answers": [
+            "CPU Vent",
+            "Temperature Decipator",
+            "Heat Vent"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of these programming languages is a low-level language?",
+        "correct_answer": "Assembly",
+        "incorrect_answers": [
+            "Python",
+            "C#",
+            "Pascal"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "What does LTS stand for in the software market?",
+        "correct_answer": "Long Term Support",
+        "incorrect_answers": [
+            "Long Taco Service",
+            "Ludicrous Transfer Speed",
+            "Ludicrous Turbo Speed"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In computing terms, typically what does CLI stand for?",
+        "correct_answer": "Command Line Interface",
+        "incorrect_answers": [
+            "Common Language Input",
+            "Control Line Interface",
+            "Common Language Interface"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "How fast is USB 3.1 Gen 2 theoretically?",
+        "correct_answer": "10 Gb/s",
+        "incorrect_answers": [
+            "5 Gb/s",
+            "8 Gb/s",
+            "1 Gb/s"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Who is the original author of the realtime physics engine called PhysX?",
+        "correct_answer": "NovodeX",
+        "incorrect_answers": [
+            "Ageia",
+            "Nvidia",
+            "AMD"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Which of the following is the oldest of these computers by release date?",
+        "correct_answer": "TRS-80",
+        "incorrect_answers": [
+            "Commodore 64",
+            "ZX Spectrum",
+            "Apple 3"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What does the International System of Quantities refer 1024 bytes as?",
+        "correct_answer": "Kibibyte",
+        "incorrect_answers": [
+            "Kylobyte",
+            "Kilobyte",
+            "Kelobyte"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Laserjet and inkjet printers are both examples of what type of printer?",
+        "correct_answer": "Non-impact printer",
+        "incorrect_answers": [
+            "Impact printer",
+            "Daisywheel printer",
+            "Dot matrix printer"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "How many values can a single byte represent?",
+        "correct_answer": "256",
+        "incorrect_answers": [
+            "8",
+            "1",
+            "1024"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Released in 2001, the first edition of Apple&#039;s Mac OS X operating system (version 10.0) was given what animal code name?",
+        "correct_answer": "Cheetah",
+        "incorrect_answers": [
+            "Puma",
+            "Tiger",
+            "Leopard"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Dutch computer scientist Mark Overmars is known for creating which game development engine?",
+        "correct_answer": "Game Maker",
+        "incorrect_answers": [
+            "Stencyl",
+            "Construct",
+            "Torque 2D"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which programming language was developed by Sun Microsystems in 1995?",
+        "correct_answer": "Java",
+        "incorrect_answers": [
+            "Python",
+            "Solaris OS",
+            "C++"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What is the name given to layer 4 of the Open Systems Interconnection (ISO) model?",
+        "correct_answer": "Transport",
+        "incorrect_answers": [
+            "Session",
+            "Data link",
+            "Network"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What vulnerability ranked #1 on the OWASP Top 10 in 2013?",
+        "correct_answer": "Injection ",
+        "incorrect_answers": [
+            "Broken Authentication",
+            "Cross-Site Scripting",
+            "Insecure Direct Object References"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Who invented the &quot;Spanning Tree Protocol&quot;?",
+        "correct_answer": "Radia Perlman",
+        "incorrect_answers": [
+            "Paul Vixie",
+            "Vint Cerf",
+            "Michael Roberts"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What does RAID stand for?",
+        "correct_answer": "Redundant Array of Independent Disks",
+        "incorrect_answers": [
+            "Rapid Access for Indexed Devices",
+            "Range of Applications with Identical Designs",
+            "Randomized Abstract Identification Description"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In computing, what does MIDI stand for?",
+        "correct_answer": "Musical Instrument Digital Interface",
+        "incorrect_answers": [
+            "Musical Interface of Digital Instruments",
+            "Modular Interface of Digital Instruments",
+            "Musical Instrument Data Interface"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In computing, what does LAN stand for?",
+        "correct_answer": "Local Area Network",
+        "incorrect_answers": [
+            "Long Antenna Node",
+            "Light Access Node",
+            "Land Address Navigation"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "According to DeMorgan&#039;s Theorem, the Boolean expression (AB)&#039; is equivalent to:",
+        "correct_answer": "A&#039; + B&#039;",
+        "incorrect_answers": [
+            "A&#039;B + B&#039;A",
+            "A&#039;B&#039;",
+            "AB&#039; + AB"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Which of these is not a layer in the OSI model for data communications?",
+        "correct_answer": "Connection Layer",
+        "incorrect_answers": [
+            "Application Layer",
+            "Transport Layer",
+            "Physical Layer"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the number of keys on a standard Windows Keyboard?",
+        "correct_answer": "104",
+        "incorrect_answers": [
+            "64",
+            "94",
+            "76"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What was the name of the first Bulgarian personal computer?",
+        "correct_answer": "IMKO-1",
+        "incorrect_answers": [
+            "Pravetz 82",
+            "Pravetz 8D",
+            "IZOT 1030"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "What type of sound chip does the Super Nintendo Entertainment System (SNES) have?",
+        "correct_answer": "ADPCM Sampler",
+        "incorrect_answers": [
+            "FM Synthesizer",
+            "Programmable Sound Generator (PSG)",
+            "PCM Sampler"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "How many bits make up the significand portion of a single precision floating point number?",
+        "correct_answer": "23",
+        "incorrect_answers": [
+            "8",
+            "53",
+            "15"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What does the &#039;S&#039; in the RSA encryption algorithm stand for?",
+        "correct_answer": "Shamir",
+        "incorrect_answers": [
+            "Secure",
+            "Schottky",
+            "Stable"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Which kind of algorithm is Ron Rivest not famous for creating?",
+        "correct_answer": "Secret sharing scheme",
+        "incorrect_answers": [
+            "Hashing algorithm",
+            "Asymmetric encryption",
+            "Stream cipher"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Who is the founder of Palantir?",
+        "correct_answer": "Peter Thiel",
+        "incorrect_answers": [
+            "Mark Zuckerberg",
+            "Marc Benioff",
+            "Jack Dorsey"
+        ]
+    },
+    {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "What does the computer software acronym JVM stand for?",
+        "correct_answer": "Java Virtual Machine",
+        "incorrect_answers": [
+            "Java Vendor Machine",
+            "Java Visual Machine",
+            "Just Virtual Machine"
+        ]
+    }
+]
